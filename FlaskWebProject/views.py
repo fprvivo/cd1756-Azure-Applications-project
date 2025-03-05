@@ -24,13 +24,9 @@ def home():
     log = request.values.get('log_button')
     if log:
         if log == 'info':
-           app.logger.info('No issue.')
+           app.logger.info('admin logged in successfully.')
         elif log == 'warning':
-           app.logger.warning('Warning occurred.')
-        elif log == 'error':
-           app.logger.error('Error occurred.')
-        elif log == 'critical':
-           app.logger.critical('Critical error occurred.')
+           app.logger.warning('Invalid login attempt')
     return render_template(
         'index.html',
         title='Home Page',
